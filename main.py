@@ -235,6 +235,13 @@ class App(tkinter.Tk):
                     # calculate nearest note number, name and frequency
                     nearest_note_number = round(number)
                     nearest_note_freq = self.audio_analyzer.number_to_frequency(nearest_note_number, self.a4_frequency)
+                    # print(number, nearest_note_number, nearest_note_freq)
+                    # Implementation: create dict of frequencies outside of while loop
+                    # Dict keys will be nearest note freqs, vals will be keyboard key to correspond to
+                    # Once mic picks up nearest note, then press key that corresponds to it
+                    # TODO: Complete above implementation without mic plugged in
+                    # TODO: Distinguish mic from guitar input, must go to separate channels
+                    if int(nearest_note_freq) == 82: print("Open E")
 
                     # calculate frequency difference from freq to nearest note
                     freq_difference = nearest_note_freq - freq
